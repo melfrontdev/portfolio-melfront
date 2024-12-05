@@ -1,0 +1,226 @@
+/* Reset */
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Jost:ital,wght@0,100..900;1,100..900&family=Modak&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chela+One&family=Jost:ital,wght@0,100..900;1,100..900&family=Modak&family=Poiret+One&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    
+    
+}
+
+body {
+    margin: 0;
+    height: 100vh; /* Garante que o fundo cubra toda a altura da janela */
+    background: linear-gradient(90deg, #081f37, #4682B4, #04595d);
+    background-size: 300% 300%; /* Amplia o gradiente para criar o efeito de movimento */
+    animation: moveGradient 8s ease infinite; /* Aplica a animação */
+    
+}
+
+@keyframes moveGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30%;
+    font-size: 25px;
+    font-family: "Modak", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+nav ul {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+    
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: rgb(224, 233, 233);
+
+    padding: 5px;
+}
+
+nav ul li a:hover {
+    border: 2px solid #88b7de4d;
+    border-radius: 5px;
+    background-color: #88b7de4d;
+}
+
+.logo {
+    max-width: 500px;
+}
+
+.home {
+    margin-top: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20%;
+    color: #fff;
+    font-family: "Chela One", system-ui;
+    font-weight: 200;
+    font-style: normal;
+    
+}
+
+
+.tecnologias {
+    margin-top: 15%;
+    margin-bottom: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    gap: 50px;
+}
+
+/* CARD */
+
+
+h1 {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-family: "Chela One", system-ui;
+    font-weight: 200;
+    font-style: normal;
+    color: #fff;
+}
+
+:root {
+    --surface-color: #fff;
+    --curve: 40;
+  }
+  
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 4rem 5vw;
+    padding: 0;
+    list-style-type: none;
+  }
+  
+  .card {
+    position: relative;
+    display: block;
+    height: 100%;  
+    border-radius: calc(var(--curve) * 1px);
+    overflow: hidden;
+    text-decoration: none;
+  }
+  
+  .card__image {      
+    width: 100%;
+    height: auto;
+  }
+  
+  .card__overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;      
+    border-radius: calc(var(--curve) * 1px);    
+    background-color: var(--surface-color);      
+    transform: translateY(100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card:hover .card__overlay {
+    transform: translateY(0);
+  }
+  
+  .card__header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2em;
+    padding: 2em;
+    border-radius: calc(var(--curve) * 1px) 0 0 0;    
+    background-color: var(--surface-color);
+    transform: translateY(-100%);
+    transition: .2s ease-in-out;
+  }
+  
+  .card__arc {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;      
+    z-index: 1;
+  }
+  
+  .card__arc path {
+    fill: var(--surface-color);
+    d: path("M 40 80 c 22 0 40 -22 40 -40 v 40 Z");
+  }       
+  
+  .card:hover .card__header {
+    transform: translateY(0);
+  }
+  
+  .card__thumb {
+    flex-shrink: 0;
+    width: 50px;
+    height: 50px;      
+    border-radius: 50%;      
+  }
+  
+  .card__title {
+    font-size: 1em;
+    margin: 0 0 .3em;
+    color: #6A515E;
+  }
+  
+  .card__tagline {
+    display: block;
+    margin: 1em 0;
+    font-family: "Chela One", system-ui;
+    font-weight: 200;
+    font-style: normal;
+    font-size: .8em; 
+    color: #D7BDCA;  
+  }
+  
+  .card__status {
+    font-size: .8em;
+    color: #D7BDCA;
+  }
+  
+  .card__description {
+    padding: 0 2em 2em;
+    margin: 0;
+    color: #D7BDCA;
+    font-family: "Poiret One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }    
