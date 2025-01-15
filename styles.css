@@ -127,6 +127,84 @@ background-size: cover;
 font-size: 14px;
 }
 
+.profileimg {
+  border: 5px solid rgb(128, 227, 226);
+  border-radius: 1000px;
+}
+
+/*responsividade*/
+@media (max-width: 1200px) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  }
+
+  .brand-box {
+    top: 30px;
+    left: 30px;
+  }
+
+  .heading-primary-main {
+    font-size: 20px;
+  }
+
+  .heading-primary-sub {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header {
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .heading-primary-main {
+    font-size: 18px;
+  }
+
+  .heading-primary-sub {
+    font-size: 12px;
+    letter-spacing: 4px;
+  }
+
+  .btn {
+    padding: 6px 12px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    height: auto;
+    clip-path: none;
+  }
+
+  .brand-box {
+    top: 15px;
+    left: 15px;
+  }
+
+  .text-box {
+    width: 90%;
+  }
+
+  .heading-primary-main {
+    font-size: 16px;
+  }
+
+  .heading-primary-sub {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+
+  .btn {
+    padding: 4px 8px;
+    font-size: 8px;
+  }
+}
 
 /* HOME */
 .home {
@@ -160,6 +238,51 @@ font-size: 14px;
   transform: scale(1.2); 
   opacity: 1; 
   cursor: pointer; 
+}
+
+@media (max-width: 1200px) {
+  .home {
+      gap: 5%;
+      flex-direction: column; /* Alinha em coluna em telas menores */
+  }
+
+  .tecnologias {
+      margin-top: 10%;
+      gap: 30px; /* Reduz o espaço entre elementos */
+  }
+}
+
+@media (max-width: 768px) {
+  .home {
+      padding: 0 10px; /* Adicionado padding para telas menores */
+      text-align: center;
+      gap: 20px;
+  }
+
+  .tecnologias {
+      margin-top: 8%;
+      gap: 20px; /* Mais compacto para telas pequenas */
+  }
+
+  .icons img {
+      width: 80px; /* Ajusta o tamanho dos ícones para telas menores */
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+      gap: 15px;
+      flex-direction: column; /* Sempre em coluna para dispositivos móveis */
+  }
+
+  .tecnologias {
+      margin-top: 5%;
+      gap: 15px;
+  }
+
+  .icons img {
+      width: 60px; /* Reduz o tamanho dos ícones ainda mais */
+  }
 }
 
 /* TIMELINE */
@@ -486,8 +609,22 @@ h1 {
   .contact-section {
     max-width: 1200px;
     margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Bordas suaves com transparência */
+    border-radius: 50px;
     padding: 20px;
     text-align: center;
+    background-color: rgba(161, 207, 223, 0.8); /* Cor azul com transparência */
+    margin-bottom: 120px;
+    font-family: sans-serif;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Leve sombreamento */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Suaviza a transição */
+}
+
+/* Efeito ao passar o mouse */
+.contact-section:hover {
+    transform: scale(1.03); /* Aumenta levemente o tamanho */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2); /* Sombra mais destacada */
+    background-color: rgba(161, 207, 223, 0.9); /* Torna o fundo levemente mais opaco */
 }
 
 .contact-header {
@@ -532,7 +669,7 @@ h1 {
     background-color: white;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    border-radius: 50px;
 }
 
 .form-container h2 {
@@ -565,11 +702,12 @@ h1 {
 
 .image-container {
     flex: 1;
+  
 }
 
 .image-container img {
-    max-width: 100%;
-    border-radius: 5px;
+  border: 5px solid rgb(128, 227, 226);
+  border-radius: 1000px;
 }
 
 @media (max-width: 768px) {
@@ -613,7 +751,7 @@ Feature Style
     }
 }
 #mobile-menu {
-    background: hsla(213, 48%, 69%,.8);
+    background: #076374;
 }
 #mobile-footer-container {
     display: flex;
@@ -676,37 +814,5 @@ Feature Style
             content: '';
             transform: rotate(-90deg);
         }
-    }
-}
-.is-rotating {
-    transform: rotate(135deg);
-}
-.is-rotating-back {
-    transform: rotate(-90deg);
-}
-.mobile-menu-hide {
-    animation: hideFooter 10s forwards;
-}
-.mobile-menu-show {
-    animation: showFooter 1s forwards;
-}
-@keyframes hideFooter {
-    0% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(1000px);
-        opacity: 0;
-    }
-}
-@keyframes showFooter {
-    0% {
-        transform: translateY(300px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
     }
 }
